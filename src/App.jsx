@@ -35,7 +35,7 @@ function App() {
   };
 
   return (
-    <div className="text-cente bg-slate-200">
+    <div className="text-cente bg-slate-200 p-10">
       <div className="mx-auto w-20">
         <GoogleLogin
           clientId={import.meta.env.VITE_GOOGLE_ID}
@@ -52,7 +52,7 @@ function App() {
       >
         <TextField id="account" label="account" value="" error={!account} />
         <TextField id="password" label="password" value="" error={!password} />
-        <button className=" mt-4 rounded-md bg-slate-800 p-2  text-white">
+        <button type="submit" className=" mt-4 rounded-md bg-slate-800 p-2  text-white">
           login
         </button>
       </form>
