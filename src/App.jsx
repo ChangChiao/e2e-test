@@ -8,6 +8,7 @@ function App() {
     password: "",
   });
   const [userInfo, setUserinfo] = useState({});
+  const [userName, setUserName] = useState("");
 
   const onChange = (target) => {
     const form = Object.fromEntries(new FormData(target).entries());
@@ -32,6 +33,7 @@ function App() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log("account, password", account, password);
+    setUserName(account);
   };
 
   return (
@@ -52,13 +54,21 @@ function App() {
       >
         <TextField id="account" label="account" value="" error={!account} />
         <TextField id="password" label="password" value="" error={!password} />
-        <button type="submit" className=" mt-4 rounded-md bg-slate-800 p-2  text-white">
+        <button
+          type="submit"
+          className=" mt-4 rounded-md bg-slate-800 p-2  text-white"
+        >
           login
         </button>
       </form>
       {userInfo.email && (
         <h1 className="p-2 text-center text-xl font-bold">
           Hello ~ {userInfo.email}
+        </h1>
+      )}
+      {userName && (
+        <h1 className="title p-2 text-center text-xl font-bold">
+          Hello ~ {userName}
         </h1>
       )}
     </div>

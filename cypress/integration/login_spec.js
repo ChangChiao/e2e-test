@@ -9,5 +9,6 @@ describe("Login", () => {
 
   it("input test", () => {
     cy.get("#password").should('have.value', "123456");
+    cy.get(".title").contains('lucky5566')
   });
 });
